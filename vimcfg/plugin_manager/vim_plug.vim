@@ -1,3 +1,4 @@
+let g:plug_window = 'vertical'
 "150 Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
@@ -89,6 +90,7 @@ Plug 'wsdjeg/FlyGrep.vim'
 " Plug 'neomake/neomake'
 Plug 'mhinz/vim-grepper'
 Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'mhinz/vim-startify'
 
 " if has('nvim')
     " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }

@@ -150,7 +150,6 @@ nmap <silent><leader>sr :Rg <c-r><c-w><cr>
 nmap <Leader>ss <Plug>(AerojumpSpace)
 nmap <Leader>sb <Plug>(AerojumpBolt)
 nmap <Leader>se <Plug>(AerojumpFromCursorBolt)
-nmap <Leader>sd <Plug>(AerojumpDefault) 
 
 let g:which_key_map.s = {
       \ 'name' : '+Search-And-Style',
@@ -162,7 +161,6 @@ let g:which_key_map.s = {
       \ 's'    : 'search-and-jump-space',
       \ 'b'    : 'search-and-jump-bolt',
       \ 'e'    : 'search-and-jump-from-cursor-bold',
-      \ 'd'    : 'search-and-jump-default',
       \ 'f'    : [':FlyGrep', 'async-flygrep-search'],
       \ 'g'    : [':Grepper', 'async-grepper-search'],
       \ }
@@ -245,6 +243,20 @@ nmap <silent><C-up> <C-W>k
 " au VimEnter * unmap  <unique><leader>mbu
 " au VimEnter * unmap  <unique><leader>mbc
 " au VimEnter * unmap  <unique><leader>mbe
+
+
+"coc.nvim keybinding
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+" Map <tab> to trigger completion and navigate to the next item: >
+inoremap <silent><expr> <TAB>
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ coc#refresh()
+
 
 " which-key keybinding config
 nnoremap <silent><leader> :WhichKey '<Space>'<CR>
