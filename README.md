@@ -1,3 +1,6 @@
+# vim config
+base on https://github.com/ABigBright/vimcfg-private
+
 # vimcfg
 This is a customized vim config for my using vim to edit effectively
 
